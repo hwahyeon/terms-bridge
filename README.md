@@ -16,9 +16,10 @@
 
 ## 목차
 - [용어]()
-  - [공용](.#공용)
-  - [Frontend](.#Frontend)
-  - [Backend](.#Backend)
+  - [공용](#공용)
+  - [Frontend](#Frontend)
+  - [Backend](#Backend)
+  - [Algorithm](#Algorithm)
 
 ## 용어
 ### 공용
