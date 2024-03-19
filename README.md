@@ -51,6 +51,8 @@
 |가상 돔	|Virtual DOM	|실제 DOM의 가벼운 복사본으로, 변화가 있을 때 먼저 가상 DOM에 적용하고 최적화된 방법으로 실제 DOM을 업데이트하는 기술|
 |CSS 선택자 | Selectors | CSS 규칙을 적용할 요소를 선택할 때 사용하는 것 |
 |CSS 속성 |	Property | 요소의 스타일을 정의하는 키워드 |
+|동기 방식|Synchronous (Sync.)|요청을 보내고 응답을 받아야만 다음 동작이 순차적으로 처리되는 방식|
+|비동기 방식|Asynchronous (Async.)|요청의 순서와 상관 없이 동작이 처리되는 방식|
 
 
 ### Backend
