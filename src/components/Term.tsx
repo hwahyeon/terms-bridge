@@ -11,18 +11,32 @@ export default function Term({ term, setTerms }: Props) {
   const [isUpdating, setIsUpdating] = useState(false);
 
   async function handleVote(column: "likes" | "dislikes") {
+    const votedTerms = JSON.parse(localStorage.getItem("votedTerms") || "{}");
+
+    if (votedTerms[term.id]) {
+      alert("You have already voted for this term.");
+      return;
+    }
+
     setIsUpdating(true);
+
     const { data, error } = await supabase
       .from("terms")
       .update({ [column]: term[column] + 1 })
       .eq("id", term.id)
       .select();
+
     setIsUpdating(false);
 
     if (error) {
       console.error("Vote Error:", error.message);
     } else {
       setTerms((terms) => terms.map((t) => (t.id === term.id ? data[0] : t)));
+      // local storage
+      localStorage.setItem(
+        "votedTerms",
+        JSON.stringify({ ...votedTerms, [term.id]: true })
+      );
     }
   }
 
@@ -47,10 +61,7 @@ export default function Term({ term, setTerms }: Props) {
         <button onClick={() => handleVote("likes")} disabled={isUpdating}>
           👍 {term.likes ?? 0}
         </button>
-        <button
-          onClick={() => handleVote("dislikes")}
-          disabled={isUpdating}
-        >
+        <button onClick={() => handleVote("dislikes")} disabled={isUpdating}>
           👎 {term.dislikes ?? 0}
         </button>
       </div>
