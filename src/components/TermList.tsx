@@ -21,7 +21,7 @@ export default function TermList({ terms, setTerms }: Props) {
           <Term key={term.id} term={term} setTerms={setTerms} />
         ))}
       </ul>
-      <p>{terms.length} terms in total. Add more!</p>
+      <p className="pt-10">{terms.length} terms in total. Add more!</p>
     </section>
   );
 }
