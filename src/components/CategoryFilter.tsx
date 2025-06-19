@@ -8,9 +8,9 @@ function CategoryFilter({ setCurrentCategory }: Props) {
   return (
     <aside>
       <ul>
-        <li className="mb-4">
+        <li className="mb-2">
           <button
-            className="btn mb-4 w-full"
+            className="btn mb-2 w-full"
             onClick={() => setCurrentCategory("all")}
           >
             All
@@ -18,7 +18,7 @@ function CategoryFilter({ setCurrentCategory }: Props) {
         </li>
 
         {CATEGORIES.map((cat) => (
-          <li key={cat.name} className="mb-4">
+          <li key={cat.name} className="mb-2">
             <button
               className="btn w-full bg-none"
               style={{ backgroundColor: cat.color }}
