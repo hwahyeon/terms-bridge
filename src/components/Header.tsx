@@ -1,4 +1,5 @@
 import React from "react";
+import Logo from "../assets/logo.svg";
 
 type HeaderProps = {
   showForm: boolean;
@@ -9,19 +10,32 @@ const Header: React.FC<HeaderProps> = ({ showForm, setShowForm }) => {
   const appDescription = "Talk Code, Any Language";
 
   return (
-    <header className="mb-10 flex items-center justify-between">
-      <div className="flex items-center gap-4">
-        <img src="logo.png" className="w-[68px] h-[68px]" alt="logo" />
-        <h1>{appDescription}</h1>
-      </div>
+<header className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+  <div className="flex items-center gap-4">
+    <a href="/">
+      <img
+        src={Logo}
+        alt="logo"
+        className="w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] object-contain"
+      />
+    </a>
+    <h1 className="text-[32px] sm:text-[42px] leading-[1] uppercase font-[Coiny] font-bold">
+      {appDescription}
+    </h1>
+  </div>
 
-      <button
-        className="border-none font-[Coiny] leading-none uppercase text-[20px] px-8 py-[20px] pb-[17px] bg-gradient-to-br from-blue-500 via-red-500 via-green-600 to-yellow-400 text-inherit rounded-full cursor-pointer transition duration-300 hover:scale-[1.1] hover:-rotate-2"
-        onClick={() => setShowForm((show) => !show)}
-      >
-        {showForm ? "Close" : "Add a term"}
-      </button>
-    </header>
+  <div className="flex justify-end sm:justify-normal">
+    <button
+      className="btn px-6 py-4 text-lg font-semibold uppercase bg-[#777777] rounded-full shadow-md transition duration-300 hover:scale-105 hover:-rotate-1"
+      onClick={() => setShowForm((show) => !show)}
+    >
+      {showForm ? "Close" : "Add a term"}
+    </button>
+  </div>
+</header>
+
+
+
   );
 };
 
