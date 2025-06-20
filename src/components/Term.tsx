@@ -8,7 +8,6 @@ type Props = {
   setTerms: React.Dispatch<React.SetStateAction<TermType[]>>;
 };
 
-
 export default function Term({ term, setTerms }: Props) {
   const [isUpdating, setIsUpdating] = useState(false);
 
@@ -43,26 +42,27 @@ export default function Term({ term, setTerms }: Props) {
   }
 
   return (
-    <li className="flex items-start gap-6 rounded-[16px] bg-[#44403c] px-6 py-4 text-[20px] leading-[1.4] tracking-[-1px] mb-4">
+    <li className="flex items-start gap-6 rounded-2xl bg-[#44403c] px-6 py-5 text-[20px] leading-[1.5] tracking-[-0.5px] mb-5 shadow-sm">
       <div className="flex-1">
         <p>
-          <span className="text-[#ef4444] font-semibold mr-2">
+          <span className="text-[#f87171] font-semibold mr-2">
             {term.language1}
           </span>
-          {term.term1} →{" "}
-          <span className="text-[#ef4444] font-semibold mr-2">
+          {term.term1}
+          <span className="mx-2 text-[#d6d3d1]">⇄</span>
+          <span className="text-[#f87171] font-semibold mr-2">
             {term.language2}
           </span>
           {term.term2}
         </p>
         {term.description && (
-          <p className="mt-1 text-sm text-[#a8a29e]">{term.description}</p>
+          <p className="mt-2 text-sm text-[#d6d3d1]">{term.description}</p>
         )}
       </div>
 
-      <div className="flex flex-col items-end gap-2 flex-shrink-0">
+      <div className="flex flex-col items-end gap-3 flex-shrink-0">
         <span
-          className="uppercase text-sm font-display px-2.5 py-[3px] rounded-full"
+          className="uppercase text-xs font-medium px-3 py-1 rounded-full text-white"
           style={{ backgroundColor: categoryColor }}
         >
           #{term.tags}
@@ -72,14 +72,14 @@ export default function Term({ term, setTerms }: Props) {
           <button
             onClick={() => handleVote("likes")}
             disabled={isUpdating}
-            className="px-3 py-1.5 text-lg font-semibold rounded-full text-inherit bg-[#78716c] hover:bg-[#292524] disabled:bg-[#44403c] transition"
+            className="px-3 py-1.5 text-base font-semibold rounded-full bg-[#78716c] hover:bg-[#292524] disabled:bg-[#57534e] transition-colors"
           >
             👍 {term.likes ?? 0}
           </button>
           <button
             onClick={() => handleVote("dislikes")}
             disabled={isUpdating}
-            className="px-3 py-1.5 text-lg font-semibold rounded-full text-inherit bg-[#78716c] hover:bg-[#292524] disabled:bg-[#44403c] transition"
+            className="px-3 py-1.5 text-base font-semibold rounded-full bg-[#78716c] hover:bg-[#292524] disabled:bg-[#57534e] transition-colors"
           >
             👎 {term.dislikes ?? 0}
           </button>
