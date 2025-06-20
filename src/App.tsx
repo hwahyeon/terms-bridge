@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     const fetchTerms = async () => {
       setIsLoading(true);
-      const { data, error } = await supabase.from("terms").select("*");
+      const { data, error } = await supabase.from("terms").select("*").eq("approved", true);;
       if (error) {
         console.error("Error fetching terms:", error);
       } else {
