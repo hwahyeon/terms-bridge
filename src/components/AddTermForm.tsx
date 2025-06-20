@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { supabase } from "../lib/supabase";
+import { LANGUAGES } from "../data/languages";
+import { CATEGORIES } from "../data/categories";
 import type { TermType } from "../types/term";
 
 type Props = {
@@ -7,15 +9,12 @@ type Props = {
   setShowForm: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const LANGUAGES = ["English", "Korean", "Japanese"];
-const TAGS = ["Frontend", "Backend", "AI", "DevOps", "Database"];
-
 export default function AddTermForm({ setTerms, setShowForm }: Props) {
-  const [language1, setLanguage1] = useState(LANGUAGES[0]);
+  const [language1, setLanguage1] = useState(LANGUAGES[0].value);
   const [term1, setTerm1] = useState("");
-  const [language2, setLanguage2] = useState(LANGUAGES[1]);
+  const [language2, setLanguage2] = useState(LANGUAGES[1].value);
   const [term2, setTerm2] = useState("");
-  const [tags, setTags] = useState(TAGS[0]);
+  const [tags, setTags] = useState(CATEGORIES[0].name);
   const [description, setDescription] = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
@@ -52,55 +51,67 @@ export default function AddTermForm({ setTerms, setShowForm }: Props) {
         <select
           value={language1}
           onChange={(e) => setLanguage1(e.target.value)}
-          className="rounded-full bg-stone-500 px-4 py-2"
+          className="rounded-full bg-stone-500 px-4 py-3"
         >
           {LANGUAGES.map((lang) => (
-            <option key={lang}>{lang}</option>
+            <option key={lang.value} value={lang.value}>
+              {lang.label}
+            </option>
           ))}
         </select>
+
         <input
           type="text"
           placeholder="Term"
           value={term1}
           onChange={(e) => setTerm1(e.target.value)}
-          className="flex-1 rounded-full bg-stone-500 px-4 py-2"
+          className="flex-1 rounded-full bg-stone-500 px-4 py-3"
           required
         />
+
         <select
           value={language2}
           onChange={(e) => setLanguage2(e.target.value)}
-          className="rounded-full bg-stone-500 px-4 py-2"
+          className="rounded-full bg-stone-500 px-4 py-3"
         >
           {LANGUAGES.map((lang) => (
-            <option key={lang}>{lang}</option>
+            <option key={lang.value} value={lang.value}>
+              {lang.label}
+            </option>
           ))}
         </select>
+
         <input
           type="text"
           placeholder="Translation"
           value={term2}
           onChange={(e) => setTerm2(e.target.value)}
-          className="flex-1 rounded-full bg-stone-500 px-4 py-2"
+          className="flex-1 rounded-full bg-stone-500 px-4 py-3"
           required
         />
+
         <select
           value={tags}
           onChange={(e) => setTags(e.target.value)}
-          className="rounded-full bg-stone-500 px-4 py-2"
+          className="rounded-full bg-stone-500 px-4 py-3"
         >
-          {TAGS.map((tag) => (
-            <option key={tag}>{tag}</option>
+          {CATEGORIES.map((cat) => (
+            <option key={cat.name} value={cat.name}>
+              {cat.name}
+            </option>
           ))}
         </select>
       </div>
+
       <input
         type="text"
         placeholder="Description (optional)"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
-        className="rounded-full bg-stone-500 px-4 py-2"
+        className="rounded-full bg-stone-500 px-4 py-3"
       />
-      <button className="btn self-end px-6 py-2 text-sm uppercase">Add</button>
+
+      <button className="btn self-end px-6 py-3 text-sm uppercase">Add</button>
     </form>
   );
 }
