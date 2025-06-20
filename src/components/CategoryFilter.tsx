@@ -10,7 +10,7 @@ function CategoryFilter({ setCurrentCategory }: Props) {
       <ul>
         <li className="mb-2">
           <button
-            className="btn mb-2 w-full"
+            className="btn mb-2 w-full bg-stone-700"
             onClick={() => setCurrentCategory("all")}
           >
             All
