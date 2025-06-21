@@ -57,13 +57,15 @@ export default function Admin() {
 
   return (
     <div className="p-6">
-      <h1 className="mb-4 text-xl font-bold">Pending Terms</h1>
-      <button
-        onClick={handleLogout}
-        className="px-4 py-2 bg-stone-600 text-white rounded hover:bg-stone-700"
-      >
-        Logout
-      </button>
+      <div className="mb-4 flex items-center justify-between">
+        <h1 className="text-xl font-bold">Pending Terms</h1>
+        <button
+          onClick={handleLogout}
+          className="px-4 py-2 bg-stone-600 text-white rounded hover:bg-stone-700 text-sm"
+        >
+          Logout
+        </button>
+      </div>
       {terms.length === 0 ? (
         <p>No pending terms.</p>
       ) : (
