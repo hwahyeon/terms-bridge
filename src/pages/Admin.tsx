@@ -4,8 +4,8 @@ import { supabase } from "../lib/supabase";
 import type { TermType } from "../types/term";
 
 export default function Admin() {
-  const [terms, setTerms] = useState<TermType[]>([]);
   const navigate = useNavigate();
+  const [terms, setTerms] = useState<TermType[]>([]);
 
   useEffect(() => {
     const checkAuth = async () => {
