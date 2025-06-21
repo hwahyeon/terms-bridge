@@ -6,6 +6,7 @@ import type { TermType } from "../types/term";
 import CategoryFilter from "../components/CategoryFilter.tsx";
 import TermList from "../components/TermList.tsx";
 import Loader from "../components/Loader.tsx";
+import AdminBar from "../components/AdminBar.tsx";
 
 function Home() {
   const [currentCategory, setCurrentCategory] = useState<string>("all");
@@ -16,7 +17,10 @@ function Home() {
   useEffect(() => {
     const fetchTerms = async () => {
       setIsLoading(true);
-      const { data, error } = await supabase.from("terms").select("*").eq("approved", true);;
+      const { data, error } = await supabase
+        .from("terms")
+        .select("*")
+        .eq("approved", true);
       if (error) {
         console.error("Error fetching terms:", error);
       } else {
@@ -35,6 +39,7 @@ function Home() {
 
   return (
     <>
+      <AdminBar />
       <Header showForm={showForm} setShowForm={setShowForm} />
       {showForm ? (
         <AddTermForm setTerms={setTerms} setShowForm={setShowForm} />
