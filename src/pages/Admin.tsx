@@ -1,9 +1,22 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import type { TermType } from "../types/term";
 
 export default function Admin() {
   const [terms, setTerms] = useState<TermType[]>([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      const { data } = await supabase.auth.getUser();
+      if (!data.user) {
+        navigate("/login");
+      }
+    };
+
+    checkAuth();
+  }, []);
 
   useEffect(() => {
     async function fetchPendingTerms() {
@@ -37,9 +50,20 @@ export default function Admin() {
     }
   }
 
+  async function handleLogout() {
+    await supabase.auth.signOut();
+    navigate("/");
+  }
+
   return (
     <div className="p-6">
       <h1 className="mb-4 text-xl font-bold">Pending Terms</h1>
+      <button
+        onClick={handleLogout}
+        className="px-4 py-2 bg-stone-600 text-white rounded hover:bg-stone-700"
+      >
+        Logout
+      </button>
       {terms.length === 0 ? (
         <p>No pending terms.</p>
       ) : (
