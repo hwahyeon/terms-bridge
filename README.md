@@ -1,98 +1,19 @@
-# 한영 개발 용어집
+# Multilingual Glossary for Developers
 
-## 프로젝트 목적
-이 프로젝트는 개발 용어의 혼동을 줄이고, 한국어와 영어로 핵심 용어를 정리함으로써 개발자들이 국제적인 환경에서 자신감 있게 소통할 수 있도록 지원하는 것을 목표로 합니다.
+This project aims to reduce confusion around development terminology and support developers in communicating confidently in international environments by organizing key terms in multiple languages.
 
-- **영어 면접 준비**: 면접에서 자주 등장하는 개발 관련 용어들을 빠르게 참조할 수 있습니다.
-- **국제적 소통 향상**: 글로벌 개발 커뮤니티와의 소통 시 발생할 수 있는 언어 장벽을 낮춰줍니다.
-- **용어 혼동 방지**: 한국어와 영어로 된 개발 문서를 읽을 때 용어의 혼동을 방지해 줍니다.
+- Quickly reference frequently used terms during interview preparation.
 
-## 규칙
-이 프로젝트는 다음과 같은 규칙을 따릅니다:
+- Improve communication with the global developer community.
 
-- 한국어와 영어가 동일한 용어는 기재하지 않습니다.
-- 실제로 빈번하게 사용되는 한국어 용어가 존재하는 경우에만 등재합니다.
-- 기술 용어뿐만 아니라 개발자 사이에서 사용되는 은어나 슬랭 따위도 등재합니다.
-- 개발 용어의 분야를 목차로 구분하고는 있으나, 절대적인 것은 아닙니다.
+- Reduce misunderstandings when reading multilingual technical documents.
 
-더 자세한 사항은 [CONTRIBUTING 문서](./CONTRIBUTING.md)를 참고해주세요.
+[Try it out](https://hwahyeon.github.io/terms-bridge/)
 
-## 목차
-- [용어]()
-  - [공용](#공용)
-  - [Frontend](#Frontend)
-  - [Backend](#Backend)
-  - [Algorithm](#Algorithm)
-  - [Data structure]()
-  - [Network](#Network)
+## Contribution Guidelines
 
-## 용어
-### 공용
-| 한국어 | English  | 간단한 설명                            |
-| ------ | -------- | -------------------------------------- |
-| 변수   | Variable | 값을 저장할 수 있는 메모리 공간 |
-| 함수   | Function | 특정 작업을 수행하는 코드의 집합       |
-| 객체   | Object   | 속성과 기능을 가진 데이터 구조         |
-| 명령어	| Command | 컴퓨터에게 특정 작업을 수행하도록 지시하는 지시어 |
-| 값 |	Values | 속성에 할당되는 데이터(예: 색상, 길이 등) |
-| 단위 |	Units |	너비, 높이 등의 측정 단위 |
-| 중단점 | Break Point | 프로그래밍에서 프로그램의 실행을 일시적으로 멈추게 하는 지점 |
-|인증|Authentication|어플리케이션이나 서버에 접속할 때, 사용자가 실제로 그들이 주장하는 사람인지 확인하는 절차|
+To contribute, click the `ADD A TERM` button on the website, select the source and target languages, enter the translation, and click the `ADD` button at the bottom to submit. Once submitted, the term will be reviewed by a maintainer and published if deemed appropriate.
 
-### Frontend
-| 한국어 | English  | 간단한 설명                            |
-| ------ | -------- | -------------------------------------- |
-| 속성 | Attribute | HTML 요소의 특성이나 데이터를 정의하는 정보 |
-| 경량화 | Minification | 파일 크기를 줄이기 위해 코드에서 불필요한 문자(공백, 주석 등)를 제거하는 과정 |
-| 해상도 | Resolution | 디스플레이에서 이미지의 선명도를 결정하는 단위로, 픽셀의 수를 나타냄 |
-| 반응형 디자인 | Responsive Design | 다양한 화면 크기에 맞춰 콘텐츠와 레이아웃이 자동으로 조정되는 웹 디자인 접근 방식 |
-| 검색 엔진 최적화 | Search Engine Optimization | 웹사이트의 검색 엔진 노출을 개선하여 더 많은 방문자를 유치하기 위한 기술 및 전략 |
-|접근성|	Accessibility	|사용자가 웹이나 애플리케이션의 콘텐츠에 접근하고 이해할 수 있도록 돕는 설계 원칙|
-|페이징	|Pagination|	콘텐츠를 여러 페이지로 나누어 표시하는 방법|
-|가상 돔	|Virtual DOM	|실제 DOM의 가벼운 복사본으로, 변화가 있을 때 먼저 가상 DOM에 적용하고 최적화된 방법으로 실제 DOM을 업데이트하는 기술|
-|CSS 선택자 | Selectors | CSS 규칙을 적용할 요소를 선택할 때 사용하는 것 |
-|CSS 속성 |	Property | 요소의 스타일을 정의하는 키워드 |
-|CSS 결합자| Combinators |선택자 간의 관계를 정의하는 데 사용되는 특별한 문자. >, +, ~ 따위|
-|가상 클래스| Pseudo classes |  CSS에서 요소가 특정 상태(hover, focus 등)에 있을 때 적용되는 스타일 규칙을 정의하는 선택자 |
-|가상 요소 | Pseudo elements | 요소의 특정 부분에 스타일을 적용하기 위해 사용되는 선택자 |
-|동기 방식|Synchronous (Sync.)|요청을 보내고 응답을 받아야만 다음 동작이 순차적으로 처리되는 방식|
-|비동기 방식|Asynchronous (Async.)|요청의 순서와 상관 없이 동작이 처리되는 방식|
-
-
-### Backend
-| 한국어 | English  | 간단한 설명                            |
-| ------ | -------- | -------------------------------------- |
-| 배포 | Deployment | 개발된 웹사이트나 애플리케이션을 인터넷상에서 사용할 수 있도록 하는 과정 |
-| 멱등성 | Idempotency | 특정 연산을 여러 번 적용해도 결과가 단 한 번 적용했을 때와 같은 성질 |
-
-### Algorithm
-| 한국어 | English  | 간단한 설명                            |
-| ------ | -------- | -------------------------------------- |
-| 정렬 | Sort | 가지런하게 줄지어 늘어서게 함. |
-|욕심쟁이 알고리즘 |Greedy Algorithm| 매 순간 최적이라고 생각되는 선택을 해 나가는 방식의 알고리즘 |
-|재귀적|recursive|문제를 해결하기 위해 자기 자신을 다시 호출하여 작은 단위의 문제로 나누어 해결하는 방식|
-
-### Data structure
-| 한국어 | English  | 간단한 설명                            |
-| ------ | -------- | -------------------------------------- |
-|배열	|Array|여러 값들을 순서대로 저장하는 구조|
-|단순 연결 리스트|Singly Linked List|데이터와 다음 노드를 가리키는 포인터로 구성된 기본적인 연결 구조|
-|원형 연결 리스트|Circular Linked List|마지막 노드가 첫 번째 노드를 가리켜 원형 구조를 이루며, 어느 지점에서 시작해도 전체 순회 가능한 구조|
-|이중 연결 리스트|Doubly Linked List|각 노드가 이전 노드와 다음 노드를 가리키는 두 포인터를 가짐으로써 앞뒤로 자유롭게 이동할 수 있는 구조|
-|정점|Vertex|그래프의 기본 단위로, 위치나 교차점을 나타냄|
-|간선|Edge|두 정점을 연결하는 선으로, 두 정점 사이의 관계나 연결을 나타냄|
-|인접 리스트|Adjacency List|그래프를 표현하는 방법 중 하나로, 각 정점(Vertex)에서 다른 정점으로 가는 간선(Edge)의 목록을 링크드 리스트(Linked List) 형태로 저장하는 방식|
-
-### Network
-| 한국어 | English  | 간단한 설명                            |
-| ------ | -------- | -------------------------------------- |
-|처리량|	Throughput	|단위 시간당 처리할 수 있는 데이터의 양. 즉, 성공적으로 전달된 데이터의 양.|
-|대역 폭|	Bandwidth	|네트워크 통신에서 전송할 수 있는 최대 데이터의 양. 최대 트래픽 허용량.|
-
-
-## 기여 방법
-프로젝트에 기여하고자 하는 분은 [CONTRIBUTING.md](./CONTRIBUTING.md) 문서를 참조해 주세요.
-
-## 기여자 목록
-
-프로젝트에 기여해 주신 모든 분들께 감사드립니다.
+- Only add translations that are actually used in real-world contexts.
+- Technical terms as well as commonly used slang and idioms are welcome. However, if a term carries a derogatory or disparaging meaning, that nuance **must be explicitly stated** in the description.
+- Terms are grouped by topic, but strict adherence to categories is not required.
